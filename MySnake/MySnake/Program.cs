@@ -21,14 +21,12 @@ namespace MySnake
             Point p1 = new Point(1, 3, '*'); // cell three in stack = address_1; cell one in heap = 1, cell two in heap = 3, cell three in heap = '*'
             Move(p1, 10, 10); // cell four in stack = address_1, cell five in stack = 10, cell six in stack = 10; cell one in heap = 11, cell two in heap = 13, cell three in heap = '*'
             Console.WriteLine("Called Move(). p1.x = " + p1.x + ", p1.y = " + p1.y); // Called Move(). p1.x = 11, p1.y = 13
-            
-          //  Console.WriteLine("Called Move(). p1.x = " + p1.x + ", p1.y = " + p1.y + "; p2.x = " + p2.x + ", p2.y = " + p2.y); // Called func2. x = 1
 
-          //  Point p1 = new Point(1,3,'*');
-          //  p1.Draw();
-
-          //  Point p2 = new Point(4,5,'#');
-          //  p2.Draw();
+            Point p2 = new Point(4, 5, '#');
+            p1 = p2; // 4,5,#
+            p2.x = 8;
+            p2.y = 8;
+            Console.WriteLine("p1=p2.   p1.x = " + p1.x + ", p1.y = " + p1.y + "; p2.x = " + p2.x + ", p2.y = " + p2.y); // p1.x = 8, p1.y = 8; p2.x = 8, p2.y = 8
 
             Console.ReadLine();
         }
