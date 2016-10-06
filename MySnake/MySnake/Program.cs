@@ -28,6 +28,10 @@ namespace MySnake
             p2.y = 8;
             Console.WriteLine("p1=p2.   p1.x = " + p1.x + ", p1.y = " + p1.y + "; p2.x = " + p2.x + ", p2.y = " + p2.y); // p1.x = 8, p1.y = 8; p2.x = 8, p2.y = 8
 
+            p1 = new Point(1, 3, '*');
+            Update(p1);
+            Console.WriteLine("Called Update(). p1.x = " + p1.x + ", p1.y = " + p1.y); // p1.x = 1, p1.y = 3
+
             Console.ReadLine();
         }
 
@@ -45,6 +49,12 @@ namespace MySnake
         {
             p.x += dx;
             p.y += dy;            
+        }
+
+        public static void Update(Point p)
+        {
+            p = new Point(); // New 3 cells in the heap are created!
+            Console.WriteLine("New 3 cells in the heap are created. p.x = " + p.x + ", p.y = " + p.y); // p.x = 0, p.y = 0
         }
 
 
