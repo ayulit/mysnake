@@ -14,6 +14,10 @@ namespace MySnake
             func1(x);  // cell two in stack = 1
             Console.WriteLine("Called func1. x = " + x); // Called func1. x = 1
 
+            x = 1;    // cell one in stack = 1
+            func2(x); // cell two in stack = 2
+            Console.WriteLine("Called func1. x = " + x); // Called func2. x = 1
+
           //  Point p1 = new Point(1,3,'*');
           //  p1.Draw();
 
@@ -24,8 +28,13 @@ namespace MySnake
         }
 
         public static void func1(int value)
-        { 
-        
+        {        
+        }
+
+        public static void func2(int value)
+        {
+            value++;
+            Console.WriteLine("Called func1. value = " + value); // Called func2. value = 2
         }
     }
 }
