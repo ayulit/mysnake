@@ -16,8 +16,11 @@ namespace MySnake
             Point p2 = new Point(4,5,'#');
             p2.Draw();
 
-            HorizontalLine line = new HorizontalLine(5,10, 8, '+');
-            line.Draw();
+            HorizontalLine hline = new HorizontalLine(5,10, 8, '+');
+            hline.Draw();
+
+            VerticalLine vline = new VerticalLine(1, 12, 14, '@');
+            vline.Draw();
 
             Console.ReadLine();
         }
