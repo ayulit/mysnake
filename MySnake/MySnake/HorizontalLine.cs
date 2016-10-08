@@ -27,6 +27,13 @@ namespace MySnake
         }
 
         // Метод для вывода линии на экран
+        public void Draw()
+        {
+            foreach (Point p in pList)
+            {
+                p.Draw();
+            }
+        }
 
 
     }
