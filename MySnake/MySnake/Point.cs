@@ -61,6 +61,12 @@ namespace MySnake
             return x + ", " + y + ", " + sym;
         }
 
+
+        internal void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
     }
 
 
