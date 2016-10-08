@@ -14,37 +14,32 @@ namespace MySnake
 
             Console.SetBufferSize(80,25);
 
-            HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
-            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
-            VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
-            VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
-            upLine.Draw();
-            downLine.Draw();
-            leftLine.Draw();
-            rightLine.Draw();
-
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
+            
+            // Отрисовка точек
             Point p = new Point(2, 3, '*');
-            Snake snake = new Snake(p, 4, Direction.DOWN);
+            Snake snake = new Snake(p, 9, Direction.DOWN);
             snake.Draw();
 
             FoodCreator foodCreator = new FoodCreator(80, 25, '$');
             Point food = foodCreator.CreateFood();
-
             food.Draw();
 
             while (true)
             {
-
+                if(walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break; // game over
+                }
                 if (snake.Eat(food))
                 {
                     // если змейка съела еду, то сгенерим еще
                     food = foodCreator.CreateFood();
                     food.Draw();
                 }
-                //else
-                //{
-                    snake.Move();
-                //}
+
+                snake.Move();
 
                 Thread.Sleep(100);
 
