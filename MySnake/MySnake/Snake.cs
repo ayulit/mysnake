@@ -56,5 +56,20 @@ namespace MySnake
             else if (key == ConsoleKey.UpArrow)
                 direction = Direction.UP;
         }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                // если след точка на пути змейки совпадает с едой, то акт питания
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else
+                return false;
+
+        }
     }
 }
