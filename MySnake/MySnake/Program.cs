@@ -41,10 +41,10 @@ namespace MySnake
                     food = foodCreator.CreateFood();
                     food.Draw();
                 }
-                else
-                {
+                //else
+                //{
                     snake.Move();
-                }
+                //}
 
                 Thread.Sleep(100);
 

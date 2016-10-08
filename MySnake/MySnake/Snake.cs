@@ -62,9 +62,7 @@ namespace MySnake
             Point head = GetNextPoint();
             if (head.IsHit(food))
             {
-                // если след точка на пути змейки совпадает с едой, то акт питания
-                food.sym = head.sym;
-                pList.Add(food);
+                food.Clear();
                 return true;
             }
             else
